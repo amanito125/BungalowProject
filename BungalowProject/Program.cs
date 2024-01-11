@@ -45,6 +45,16 @@ namespace BungalowProject
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapControllerRoute(
+                name: "reservations",
+                pattern: "Reservations/{action=Index}/{id?}",
+                defaults: new { controller = "Reservations" });
+
+            app.MapControllerRoute(
+                name: "bungalows",
+                pattern: "Bungalows/{action=Index}/{id?}",
+                defaults: new { controller = "Bungalows" });
+
             app.MapRazorPages();
 
             app.Run();

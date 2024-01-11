@@ -1,37 +1,37 @@
 ﻿@model IEnumerable<BungalowProject.Data.Bungalow>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bungalows";
 }
 
-<h1>Index</h1>
+<h1>Bungalows</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add new bungalow</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BungalowId)
+            Bungalow's ID    
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Capacity)
+                Capacity
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsSmokingAllowed)
+                For Smokers
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsAvalive)
+                IsAvalibe?
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AllowsPets)
+                For pets
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Location)
+                Location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PricePerNight)
+                Price
             </th>
             <th></th>
         </tr>

@@ -11,7 +11,7 @@ namespace BungalowProject.Data
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public virtual AppUser? User { get; set; }
         public DateTime ReservationDateTime { get; set; }
         public string Description { get; set; }

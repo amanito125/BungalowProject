@@ -57,13 +57,23 @@ namespace BungalowProject.Controllers
             return View();
         }
 
-        // POST: Reservations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UserId,ReservationDateTime,Description,BungalowId")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
+                var existingReservation = await _context.Reservation
+                    .FirstOrDefaultAsync(r =>
+                        r.BungalowId == reservation.BungalowId &&
+                        r.ReservationDateTime.Date == reservation.ReservationDateTime.Date);
+
+                if (existingReservation != null)
+                {
+                    TempData["ErrorMessage"] = "Резервация за този бунгало вече съществува за този ден.";
+                    return RedirectToAction(nameof(Index));
+                }
+
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -73,6 +83,7 @@ namespace BungalowProject.Controllers
             ViewData["BungalowId"] = new SelectList(_context.Bungalow, "Id", "Id", reservation.BungalowId);
             return View(reservation);
         }
+
 
 
         // GET: Reservations/Edit/5
