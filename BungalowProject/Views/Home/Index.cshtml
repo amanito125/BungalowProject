@@ -4,7 +4,7 @@
 
 <style>
     body {
-        background: url('https://png.pngtree.com/background/20230611/original/pngtree-an-old-cabin-in-the-middle-of-a-forest-picture-image_3141657.jpg') no-repeat center center fixed;
+        background: url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp') no-repeat center center fixed;
         background-size: cover;
         color: white;
         font-family: Arial, sans-serif; 
@@ -12,19 +12,59 @@
 
     .display-4 {
         font-weight: bold;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
         padding: 10px; 
     }
 
-    p {
-        background-color: rgba(0, 0, 0, 0.5); 
-        border-radius: 10px;
-        padding: 10px; 
+    .display-5 {
+        margin-top: 20px;
+        font-size: 30px;
+        font-family: 'Nunito Sans', sans-serif;
+        padding: 20px;
     }
+
 </style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>DO NOT Learn about building Web apps with ASP.NET Core.</p>
+<div class="county">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p class="display-5">Stats:</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="three col-md-4">
+                <div class="counter brown">
+                    <div class="counter-icon">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="counter-content">
+                        <h3>Users</h3>
+                        <span class="counter-value">@ViewData["UsersCount"]</span>
+                    </div>
+                </div>
+            </div>
+        <div class="three col-md-4">
+                <div class="counter brown">
+                    <div class="counter-icon">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="counter-content">
+                        <h3>Reservations</h3>
+                        <span class="counter-value">@ViewData["ReservationsCount"]</span>
+                    </div>
+                </div>
+            </div>
+        <div class="three col-md-4">
+                <div class="counter brown">
+                    <div class="counter-icon">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="counter-content">
+                        <h3>Bungalows</h3>
+                        <span class="counter-value">@ViewData["BungalowsCount"]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+

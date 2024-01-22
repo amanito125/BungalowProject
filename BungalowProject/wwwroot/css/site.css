@@ -1,18 +1,131 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.linkedtext {
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.county {
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.counter {
+    font-family: 'Nunito Sans', sans-serif;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    width: 200px;
+    min-height: 215px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+    .counter:before {
+        content: '';
+        background-color: #CCCCCC;
+        height: 105px;
+        width: 100%;
+        border-radius: 30px 30px 0 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .counter .counter-icon {
+        color: #fff;
+        background: rgba(150, 150, 150, 0.8);
+        font-size: 50px;
+        line-height: 90px;
+        width: 120px;
+        height: 100px;
+        margin: 0 auto 10px;
+        border-radius: 10px 10px 0 0;
+        transform: translateY(-20px);
+        position: relative;
+        clip-path: polygon(0% 0%, 100% 0, 100% 70%, 50% 100%, 0 70%);
+    }
+
+        .counter .counter-icon:before {
+            content: "";
+            background: rgba(120, 120, 120, 1);
+            width: 120px;
+            height: 90px;
+            border-radius: 10px 10px 0 0;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: -1;
+            clip-path: polygon(0% 0%, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        }
+
+    .counter:hover .counter-icon i {
+        transform: rotate(360deg);
+        transition: all 0.3s ease;
+    }
+
+    .counter h3 {
+        color: #333;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 5px 0;
+    }
+
+    .counter .counter-value {
+        color: rgba(150, 150, 150, 0.8);
+        font-size: 30px;
+        font-weight: 600;
+        display: block;
+    }
+
+    .counter.brown:before {
+        background-color: #CCCCCC;
+    }
+
+    .counter.brown .counter-icon {
+        background-color: rgb(150, 150, 150);
+    }
+
+    .counter.blue .counter-icon:before {
+        background-color: rgba(150, 150, 150, 0.8);
+    }
+
+    .counter.brown .counter-value {
+        color: black;
+    }
+
+    .counter.gray .counter-value {
+        color: #666;
+    }
+
+@media screen and (max-width: 990px) {
+    .counter {
+        margin-bottom: 40px;
+    }
 }

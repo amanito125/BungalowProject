@@ -4,10 +4,20 @@
     ViewData["Title"] = "Reservation";
 }
 
+<style>
+    body {
+        background: url('https://i.redd.it/i-recreated-one-of-the-ai-generated-frutiger-aero-v0-siz7hsb2ez7a1.png?width=1920&format=png&auto=webp&s=e06aaf5d6aa7a036b65daa4860c4ad5bd68e9c4e') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+
 <h1>Reservations</h1>
 
 <p>
-    <a asp-action="Create">Create New Reservation</a>
+    <a asp-action="Create" class="linkedtext">Create New Reservation</a>
 </p>
 <table class="table">
     <thead>
@@ -43,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.Bungalow.Id)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" class="linkedtext" asp-route-id=" @item.Id">Edit</a> |
+                    <a asp-action="Details" class="linkedtext"  asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" class="linkedtext"  asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
